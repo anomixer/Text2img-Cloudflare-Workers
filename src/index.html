@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>基于 CloudFlare 的在线文生图服务</title>
+    <title>基于 CloudFlare 的線上文生圖服务</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/huarzone/Text2img-Cloudflare-Workers@main/public/favicon.ico">
@@ -197,8 +197,8 @@
             position: relative;
             border-radius: 0.5rem;
             max-height: 400px; /* 添加最大高度限制 */
-            margin: 0 auto; /* 居中显示 */
-            width: 100%; /* 保持宽度响应式 */
+            margin: 0 auto; /* 居中顯示 */
+            width: 100%; /* 保持寬度响应式 */
         }
         
         #imageStatus {
@@ -295,13 +295,13 @@
     <div class="container mx-auto px-4 py-4 max-w-6xl">
         <div class="flex items-center justify-between mb-6">
             <h1 class="text-2xl md:text-3xl font-bold flex items-center">
-                🐳&nbsp;在线文生图服务
+                🐳&nbsp;線上文生圖服务
             </h1>
             <div class="flex items-center space-x-2">
                 <button id="themeToggle" class="btn btn-secondary p-2 h-10 w-10 flex items-center justify-center" aria-label="切换暗色主题">
                     <i class="fa-solid fa-moon"></i>
                 </button>
-                <button id="github" class="btn btn-secondary p-2 h-10 w-10 flex items-center justify-center" aria-label="项目地址" onclick="window.open('https://github.com/huarzone/Text2img-Cloudflare-Workers', '_blank')">
+                <button id="github" class="btn btn-secondary p-2 h-10 w-10 flex items-center justify-center" aria-label="專案地址" onclick="window.open('https://github.com/huarzone/Text2img-Cloudflare-Workers', '_blank')">
                     <i class="fa-brands fa-github"></i>
                 </button>
             </div>
@@ -317,37 +317,37 @@
                             基本设置
                         </h2>
                         <button id="randomButton" class="btn btn-secondary text-sm py-1 px-3 flex items-center">
-                            <i class="fa-solid fa-dice mr-1"></i> 随机提示词
+                            <i class="fa-solid fa-dice mr-1"></i> 隨機提示詞
                         </button>
                     </div>
                     
                     <div>
                         <label for="password" class="block text-sm font-medium mb-1 flex items-center">
-                            <i class="fa-solid fa-key mr-1 text-xs"></i> 访问密码
+                            <i class="fa-solid fa-key mr-1 text-xs"></i> 訪問密碼
                         </label>
-                        <input type="password" id="password" placeholder="请输入访问密码" class="w-full">
+                        <input type="password" id="password" placeholder="請輸入訪問密碼" class="w-full">
                     </div>
                     
                     <div>
                         <label for="prompt" class="block text-sm font-medium mb-1 flex items-center">
-                            <i class="fa-solid fa-wand-magic-sparkles mr-1 text-xs"></i> 正向提示词
+                            <i class="fa-solid fa-wand-magic-sparkles mr-1 text-xs"></i> 正向提示詞
                         </label>
-                        <textarea id="prompt" rows="3" placeholder="描述您想要生成的图像内容及样式..." class="w-full">cyberpunk cat</textarea>
+                        <textarea id="prompt" rows="3" placeholder="描述您想要生成的圖像内容及样式..." class="w-full">cyberpunk cat</textarea>
                     </div>
                     
                     <div>
                         <label for="negative_prompt" class="block text-sm font-medium mb-1 flex items-center">
-                            <i class="fa-solid fa-ban mr-1 text-xs"></i> 反向提示词
+                            <i class="fa-solid fa-ban mr-1 text-xs"></i> 反向提示詞
                         </label>
-                        <textarea id="negative_prompt" rows="2" placeholder="描述在生成的图像中要避免的元素文本..." class="w-full"></textarea>
+                        <textarea id="negative_prompt" rows="2" placeholder="描述在生成的圖像中要避免的元素文本..." class="w-full"></textarea>
                     </div>
                     
                     <div>
                         <label for="model" class="block text-sm font-medium mb-1 flex items-center">
-                            <i class="fa-solid fa-robot mr-1 text-xs"></i> 文生图模型
+                            <i class="fa-solid fa-robot mr-1 text-xs"></i> 文生圖模型
                         </label>
                         <select id="model" class="w-full">
-                            <option value="loading" disabled selected>加载中...</option>
+                            <option value="loading" disabled selected>載入中...</option>
                         </select>
                     </div>
                 </div>
@@ -359,7 +359,7 @@
                             高级选项
                         </h2>
                         <button id="toggleAdvanced" class="text-xs btn btn-secondary py-1 px-3 flex items-center">
-                            <i class="fa-solid fa-chevron-down mr-1" id="advancedIcon"></i> 显示/隐藏
+                            <i class="fa-solid fa-chevron-down mr-1" id="advancedIcon"></i> 顯示/隱藏
                         </button>
                     </div>
                     
@@ -367,7 +367,7 @@
                         <div>
                             <div class="flex justify-between items-center">
                                 <label for="width" class="block text-sm font-medium flex items-center">
-                                    <i class="fa-solid fa-arrows-left-right mr-1 text-xs"></i> 图像宽度
+                                    <i class="fa-solid fa-arrows-left-right mr-1 text-xs"></i> 圖像寬度
                                 </label>
                                 <span id="widthValue" class="text-sm font-mono">1024px</span>
                             </div>
@@ -377,7 +377,7 @@
                         <div>
                             <div class="flex justify-between items-center">
                                 <label for="height" class="block text-sm font-medium flex items-center">
-                                    <i class="fa-solid fa-arrows-up-down mr-1 text-xs"></i> 图像高度
+                                    <i class="fa-solid fa-arrows-up-down mr-1 text-xs"></i> 圖像高度
                                 </label>
                                 <span id="heightValue" class="text-sm font-mono">1024px</span>
                             </div>
@@ -387,8 +387,8 @@
                         <div>
                             <div class="flex justify-between items-center">
                                 <label for="num_steps" class="block text-sm font-medium flex items-center tooltip">
-                                    <i class="fa-solid fa-shoe-prints mr-1 text-xs"></i> 迭代步数
-                                    <span class="tooltiptext">更高的步数通常会产生更精细的细节，但需要更长的处理时间</span>
+                                    <i class="fa-solid fa-shoe-prints mr-1 text-xs"></i> 疊代步數
+                                    <span class="tooltiptext">更高的步数通常会产生更精细的细节，但需要更长的处理時間</span>
                                 </label>
                                 <span id="num_stepsValue" class="text-sm font-mono">20</span>
                             </div>
@@ -398,8 +398,8 @@
                         <div>
                             <div class="flex justify-between items-center">
                                 <label for="guidance" class="block text-sm font-medium flex items-center tooltip">
-                                    <i class="fa-solid fa-compass mr-1 text-xs"></i> 引导系数
-                                    <span class="tooltiptext">控制生成图像与提示词的匹配程度，较高的值会更严格遵循提示词</span>
+                                    <i class="fa-solid fa-compass mr-1 text-xs"></i> 引導係數
+                                    <span class="tooltiptext">控制生成圖像与提示詞的匹配程度，较高的值会更严格遵循提示詞</span>
                                 </label>
                                 <span id="guidanceValue" class="text-sm font-mono">7.5</span>
                             </div>
@@ -408,26 +408,26 @@
                         
                         <div>
                             <label for="seed" class="block text-sm font-medium mb-1 flex items-center tooltip">
-                                <i class="fa-solid fa-seedling mr-1 text-xs"></i> 随机种子
-                                <span class="tooltiptext">使用相同的种子值可以在其他参数相同的情况下生成相似的图像</span>
+                                <i class="fa-solid fa-seedling mr-1 text-xs"></i> 隨機种子
+                                <span class="tooltiptext">使用相同的种子值可以在其他參數相同的情况下生成相似的圖像</span>
                             </label>
                             <div class="flex gap-2">
-                                <input type="number" id="seed" placeholder="随机种子值" class="w-full">
+                                <input type="number" id="seed" placeholder="隨機种子值" class="w-full">
                                 <button id="randomSeed" class="btn btn-secondary text-sm py-1 px-3">
                                     <i class="fa-solid fa-random"></i>
                                 </button>
                             </div>
-                            <p class="text-xs text-gray-500 mt-1">留空则随机生成</p>
+                            <p class="text-xs text-gray-500 mt-1">留空则隨機生成</p>
                         </div>
                     </div>
                 </div>
                 
                 <button id="submitButton" class="btn btn-primary w-full py-3 flex items-center justify-center">
-                    <i class="fa-solid fa-wand-magic-sparkles mr-2"></i> 生成图像
+                    <i class="fa-solid fa-wand-magic-sparkles mr-2"></i> 生成圖像
                 </button>
             </div>
             
-            <!-- 右侧图像展示 -->
+            <!-- 右侧圖像展示 -->
             <div class="w-full lg:w-3/5">
                 <div class="card h-full p-4 space-y-4 fade-in">
                     <div class="flex justify-between items-center">
@@ -437,10 +437,10 @@
                         </h2>
                         <div class="flex space-x-2">
                             <button id="copyParamsButton" class="btn btn-secondary text-sm py-1 px-3 hidden">
-                                <i class="fa-solid fa-copy mr-1"></i> 复制参数
+                                <i class="fa-solid fa-copy mr-1"></i> 複製參數
                             </button>
                             <button id="downloadButton" class="btn btn-secondary text-sm py-1 px-3 hidden">
-                                <i class="fa-solid fa-download mr-1"></i> 下载图像
+                                <i class="fa-solid fa-download mr-1"></i> 下載圖像
                             </button>
                         </div>
                     </div>
@@ -449,23 +449,23 @@
                         <div id="loadingOverlay" class="loading-mask hidden">
                             <div class="text-center">
                                 <div class="inline-block animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-white"></div>
-                                <p class="text-white mt-3 font-medium">生成中，请稍候...</p>
-                                <p class="text-white text-sm mt-1">这可能需要几秒到几十秒不等</p>
+                                <p class="text-white mt-3 font-medium">生成中，請稍候...</p>
+                                <p class="text-white text-sm mt-1">這可能需要幾秒到幾十秒不等</p>
                             </div>
                         </div>
                         <div id="initialPrompt" class="text-center text-gray-400 dark:text-gray-600">
                             <i class="fa-solid fa-image-portrait text-4xl mb-2"></i>
-                            <p>点击生成按钮开始创建图像</p>
+                            <p>點擊生成按钮开始创建圖像</p>
                         </div>
                         <span id="imageStatus" class="bg-gray-300 text-gray-700 hidden">状态</span>
-                        <img id="aiImage" class="max-h-full max-w-full rounded hidden" alt="生成的图像">
+                        <img id="aiImage" class="max-h-full max-w-full rounded hidden" alt="生成的圖像">
                     </div>
                     
                     <div id="imageInfo" class="space-y-3 mt-2">
                         <div class="grid grid-cols-2 gap-3">
                             <div class="text-sm flex items-center">
                                 <span class="font-medium flex items-center">
-                                    <i class="fa-regular fa-clock mr-1 text-xs"></i> 生成时间：
+                                    <i class="fa-regular fa-clock mr-1 text-xs"></i> 生成時間：
                                 </span>
                                 <span id="generationTime" class="ml-1">-</span>
                             </div>
@@ -479,7 +479,7 @@
                         
                         <div id="allParamsContainer" class="hidden mt-3 border-t border-gray-200 dark:border-gray-700 pt-3">
                             <h3 class="text-sm font-medium mb-2 flex items-center">
-                                <i class="fa-solid fa-list-check mr-1"></i> 所有参数
+                                <i class="fa-solid fa-list-check mr-1"></i> 所有參數
                             </h3>
                             <div id="allParams" class="flex flex-wrap"></div>
                         </div>
@@ -496,12 +496,12 @@
             let randomPromptsList = [];
             let currentImageParams = {};
             
-            // 加载模型列表
+            // 載入模型列表
             async function loadModels() {
                 try {
                     const response = await fetch('/api/models');
                     if (!response.ok) {
-                        throw new Error('加载模型列表失败');
+                        throw new Error('載入模型列表失敗');
                     }
                     
                     availableModels = await response.json();
@@ -523,27 +523,27 @@
                         modelSelect.value = availableModels[1].id;
                     }
                 } catch (error) {
-                    console.error('加载模型列表错误:', error);
-                    showStatus('加载模型列表失败', 'error');
+                    console.error('載入模型列表错误:', error);
+                    showStatus('載入模型列表失敗', 'error');
                 }
             }
             
-            // 加载随机提示词
+            // 載入隨機提示詞
             async function loadRandomPrompts() {
                 try {
                     const response = await fetch('/api/prompts');
                     if (!response.ok) {
-                        throw new Error('加载提示词失败');
+                        throw new Error('載入提示詞失敗');
                     }
                     
                     randomPromptsList = await response.json();
                 } catch (error) {
-                    console.error('加载提示词错误:', error);
-                    randomPromptsList = ['未能加载提示词列表，请重试或手动输入'];
+                    console.error('載入提示詞错误:', error);
+                    randomPromptsList = ['未能載入提示詞列表，请重试或手动输入'];
                 }
             }
             
-            // 初始化加载资源
+            // 初始化載入资源
             loadModels();
             loadRandomPrompts();
             
@@ -595,7 +595,7 @@
                 }
             });
             
-            // 滑块值显示
+            // 滑块值顯示
             const sliders = ['width', 'height', 'num_steps', 'guidance'];
             sliders.forEach(id => {
                 const slider = document.getElementById(id);
@@ -612,73 +612,73 @@
                 });
             });
             
-            // 随机种子
+            // 隨機种子
             document.getElementById('randomSeed').addEventListener('click', function() {
                 const randomSeed = Math.floor(Math.random() * 4294967295);
                 document.getElementById('seed').value = randomSeed;
             });
             
-            // 随机提示词
+            // 隨機提示詞
             document.getElementById('randomButton').addEventListener('click', function() {
                 if (randomPromptsList.length > 0) {
                     const randomIndex = Math.floor(Math.random() * randomPromptsList.length);
                     document.getElementById('prompt').value = randomPromptsList[randomIndex];
                 } else {
-                    showStatus('提示词列表未加载，请稍后再试', 'error');
+                    showStatus('提示詞列表未載入，请稍后再试', 'error');
                 }
             });
             
-            // 复制参数
+            // 複製參數
             document.getElementById('copyParamsButton').addEventListener('click', function() {
                 if (!currentImageParams) return;
                 
-                // 创建参数文本
-                let paramsText = '--- AI绘图创作生成参数 ---\n';
+                // 创建參數文本
+                let paramsText = '--- AI绘圖创作生成參數 ---\n';
                 for (const [key, value] of Object.entries(currentImageParams)) {
-                    if (key === 'password') continue; // 不复制密码
+                    if (key === 'password') continue; // 不複製密碼
                     paramsText += `${formatParamName(key)}: ${value}\n`;
                 }
                 
-                // 复制到剪贴板
+                // 複製到剪贴板
                 navigator.clipboard.writeText(paramsText)
                     .then(() => {
-                        showStatus('参数已复制到剪贴板', 'success');
+                        showStatus('參數已複製到剪贴板', 'success');
                     })
                     .catch(err => {
-                        console.error('复制失败:', err);
-                        showStatus('复制参数失败', 'error');
+                        console.error('複製失敗:', err);
+                        showStatus('複製參數失敗', 'error');
                     });
             });
             
-            // 格式化参数名称
+            // 格式化參數名称
             function formatParamName(name) {
                 const nameMap = {
-                    'prompt': '正向提示词',
-                    'negative_prompt': '反向提示词',
-                    'model': '文生图模型',
-                    'width': '图像宽度',
-                    'height': '图像高度',
-                    'num_steps': '迭代步数',
-                    'guidance': '引导系数',
-                    'seed': '随机种子'
+                    'prompt': '正向提示詞',
+                    'negative_prompt': '反向提示詞',
+                    'model': '文生圖模型',
+                    'width': '圖像寬度',
+                    'height': '圖像高度',
+                    'num_steps': '疊代步數',
+                    'guidance': '引導係數',
+                    'seed': '隨機种子'
                 };
                 return nameMap[name] || name;
             }
             
-            // 下载图像
+            // 下載圖像
             document.getElementById('downloadButton').addEventListener('click', async function() {
                 const img = document.getElementById('aiImage');
                 if (!img.src) {
-                    showStatus('没有可下载的图像', 'error');
+                    showStatus('没有可下載的圖像', 'error');
                     return;
                 }
                 
                 try {
-                    // 从图像数据创建blob
+                    // 从圖像数据创建blob
                     const response = await fetch(img.src);
                     const blob = await response.blob();
                     
-                    // 创建下载链接
+                    // 创建下載链接
                     const url = window.URL.createObjectURL(blob);
                     const link = document.createElement('a');
                     link.href = url;
@@ -688,7 +688,7 @@
                     const model = document.getElementById('usedModel').textContent || 'ai-image';
                     link.download = `${model}-${timestamp}.png`;
                     
-                    // 触发下载
+                    // 触发下載
                     document.body.appendChild(link);
                     link.click();
                     
@@ -696,16 +696,16 @@
                     document.body.removeChild(link);
                     window.URL.revokeObjectURL(url);
                     
-                    showStatus('图像下载成功', 'success');
+                    showStatus('圖像下載成功', 'success');
                 } catch (error) {
-                    console.error('下载图像错误:', error);
-                    showStatus('下载图像失败', 'error');
+                    console.error('下載圖像错误:', error);
+                    showStatus('下載圖像失敗', 'error');
                 }
             });
             
             // 提交生成请求
             document.getElementById('submitButton').addEventListener('click', async function() {
-                // 显示加载中状态
+                // 顯示載入中状态
                 const loadingOverlay = document.getElementById('loadingOverlay');
                 const initialPrompt = document.getElementById('initialPrompt');
                 const aiImage = document.getElementById('aiImage');
@@ -715,12 +715,12 @@
                     return;
                 }
                 
-                // 隐藏初始提示和图像
+                // 隱藏初始提示和圖像
                 initialPrompt.classList.add('hidden');
                 aiImage.classList.add('hidden');
                 loadingOverlay.classList.remove('hidden');
                 
-                // 隐藏之前的提示和按钮
+                // 隱藏之前的提示和按钮
                 const imageStatus = document.getElementById('imageStatus');
                 const copyParamsButton = document.getElementById('copyParamsButton');
                 const downloadButton = document.getElementById('downloadButton');
@@ -729,7 +729,7 @@
                 if (copyParamsButton) copyParamsButton.classList.add('hidden');
                 if (downloadButton) downloadButton.classList.add('hidden');
                 
-                // 获取参数
+                // 获取參數
                 const params = {
                     password: document.getElementById('password')?.value || '',
                     prompt: document.getElementById('prompt')?.value || '',
@@ -742,7 +742,7 @@
                     seed: parseInt(document.getElementById('seed')?.value) || Math.floor(Math.random() * 4294967295)
                 };
                 
-                // 保存当前参数
+                // 保存当前參數
                 currentImageParams = {...params};
                 
                 try {
@@ -761,28 +761,28 @@
                         const contentType = response.headers.get('content-type');
                         if (contentType?.includes('application/json')) {
                             const errorData = await response.json();
-                            throw new Error(errorData.message || '生成失败');
+                            throw new Error(errorData.message || '生成失敗');
                         } else {
                             const errorText = await response.text();
                             console.error('服务器错误:', errorText);
-                            throw new Error('生成失败');
+                            throw new Error('生成失敗');
                         }
                     }
                     
-                    // 获取图像blob数据并转换为base64
+                    // 获取圖像blob数据并转换为base64
                     const imageBlob = await response.blob();
                     const base64Image = await blobToBase64(imageBlob);
                     const endTime = performance.now();
                     const generationTime = ((endTime - startTime) / 1000).toFixed(2);
                     
-                    // 设置图像信息并显示图像
+                    // 设置圖像信息并顯示圖像
                     aiImage.src = base64Image;
                     aiImage.onload = () => {
-                        // 图像加载完成后更新UI
+                        // 圖像載入完成后更新UI
                         loadingOverlay.classList.add('hidden');
                         aiImage.classList.remove('hidden');
                         
-                        // 安全地更新信息显示
+                        // 安全地更新信息顯示
                         const elements = {
                             generationTime: document.getElementById('generationTime'),
                             usedModel: document.getElementById('usedModel')
@@ -795,19 +795,19 @@
                             elements.usedModel.textContent = getModelNameById(params.model);
                         }
                         
-                        // 更新所有参数面板
+                        // 更新所有參數面板
                         updateParamsDisplay(params);
                         
-                        // 显示状态和操作按钮
+                        // 顯示状态和操作按钮
                         showStatus('生成成功', 'success');
                         if (copyParamsButton) copyParamsButton.classList.remove('hidden');
                         if (downloadButton) downloadButton.classList.remove('hidden');
                     };
                     
                 } catch (error) {
-                    console.error('生成图像错误:', error);
-                    showStatus(error.message || '生成失败', 'error');
-                    // 显示初始提示
+                    console.error('生成圖像错误:', error);
+                    showStatus(error.message || '生成失敗', 'error');
+                    // 顯示初始提示
                     initialPrompt.classList.remove('hidden');
                     aiImage.classList.add('hidden');
                 } finally {
@@ -831,24 +831,24 @@
                 return model ? model.name : id;
             }
             
-            // 更新参数显示
+            // 更新參數顯示
             function updateParamsDisplay(params) {
                 const allParamsContainer = document.getElementById('allParamsContainer');
                 const allParamsElement = document.getElementById('allParams');
                 
                 if (!allParamsContainer || !allParamsElement) return;
                 
-                // 清空现有参数
+                // 清空现有參數
                 allParamsElement.innerHTML = '';
                 
-                // 添加新参数
+                // 添加新參數
                 for (const [key, value] of Object.entries(params)) {
-                    if (key === 'password') continue; // 不显示密码
+                    if (key === 'password') continue; // 不顯示密碼
                     
                     const paramName = formatParamName(key);
                     const paramValue = value;
                     
-                    // 创建参数徽章
+                    // 创建參數徽章
                     const badge = document.createElement('div');
                     badge.className = 'param-badge';
                     badge.innerHTML = `<span class="font-medium">${paramName}:</span> ${paramValue}`;
@@ -856,11 +856,11 @@
                     allParamsElement.appendChild(badge);
                 }
                 
-                // 显示参数容器
+                // 顯示參數容器
                 allParamsContainer.classList.remove('hidden');
             }
             
-            // 显示状态提示
+            // 顯示状态提示
             function showStatus(message, type = 'info') {
                 const statusElement = document.getElementById('imageStatus');
                 if (!statusElement) return;
@@ -884,10 +884,10 @@
                 // 设置消息
                 statusElement.textContent = message;
                 
-                // 显示
+                // 顯示
                 statusElement.classList.remove('hidden');
                 
-                // 5秒后自动隐藏
+                // 5秒后自动隱藏
                 setTimeout(() => {
                     statusElement.classList.add('hidden');
                 }, 5000);
