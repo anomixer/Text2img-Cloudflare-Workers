@@ -37,7 +37,7 @@
 
 Text2img-Cloudflare-Workers 是基於 Cloudflare Workers AI 服務搭建的線上文字產生圖像視覺化網頁，完全建構在 Cloudflare Workers 上。此專案為透過簡單呼叫 Cloudflare 官方提供的 [文生圖 - Text-to-Image](https://developers.cloudflare.com/workers-ai/models/) 模型，可以快速實現隨時隨地無需登入的影像產生需求。
 
-### 體驗網址：[https://text2img.huarzone.com/](https://text2img.huarzone.com/)
+### 體驗網址：[https://txt2img.johantw.workers.dev/](https://txt2img.johantw.workers.dev/)
 
 ## ✨ 主要特性
 
